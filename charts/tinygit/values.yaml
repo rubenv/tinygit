@@ -1,2 +1,2 @@
 dataPath: /data
-image: ghcr.io/rubenv/tinygit:v0.0.2
+image: ghcr.io/rubenv/tinygit:v0.0.3
