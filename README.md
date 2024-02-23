@@ -7,7 +7,7 @@ Run the docker image, point volume to /data.
 For instance:
 
 ```
-podman run -ti --rm -v /tmp/tinygit:/data:Z --name tinygit -p 2222:22 tinygit
+podman run -ti --rm -v /tmp/tinygit:/data:Z --name tinygit -p 2222:22 ghcr.io/rubenv/tinygit:v1.0.0
 ```
 
 In `/data`:
