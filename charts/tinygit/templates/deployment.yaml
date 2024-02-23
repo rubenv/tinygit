@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tinygit
+  labels:
+    app: tinygit
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+      matchLabels:
+        app: tinygit
+  template:
+    metadata:
+      labels:
+        app: tinygit
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: tinygit
+        image: {{ .Values.image }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 22
+          name: ssh
+          protocol: TCP
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        hostPath:
+          path: {{ .Values.dataPath }}

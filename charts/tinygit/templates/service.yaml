@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tinygit
+  labels:
+    app: tinygit
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  selector:
+    app: tinygit
+    release: {{ .Release.Name }}
+  ports:
+  - name: ssh
+    port: 22
+    protocol: TCP
