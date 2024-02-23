@@ -1,2 +1,11 @@
 apiVersion: v1
-entries: {}
+entries:
+  tinygit:
+  - apiVersion: v2
+    created: "2024-02-23T08:51:01.868608431Z"
+    digest: 3e1897a7e2f8187fdb8935fd8a9693bece4e7b1947acc9a4a573dc7757c5e032
+    name: tinygit
+    urls:
+    - https://github.com/rubenv/tinygit/releases/download/tinygit-0.0.1/tinygit-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-02-23T08:51:01.868621655Z"
